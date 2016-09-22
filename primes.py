@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+from sys import argv
+from math import sqrt
+
 """Output primes smaller than an integer
 Given a single integer argument n, return a list containing all primes
 numbers strictly less than n.
 """
-
 
 def main(argv):
     print(eratosthenes(argv[1]))
@@ -75,8 +77,6 @@ def test_primes_char():
 	assert success, message
 
 if __name__ == "__main__":
-    from sys import argv
-    from math import sqrt
     try:
         main(argv)
     except IndexError:
