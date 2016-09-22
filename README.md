@@ -2,7 +2,7 @@
 
 **Author(s):** _Nengyin (Helen) Zhu, Lance Clifner, Alexis Ford_
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-04-nv-shen.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-04-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-04-nv-shen.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-04-nv-shen)
 
 **Due date:** 2016/09/27
 
