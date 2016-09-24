@@ -12,6 +12,30 @@ def main(argv):
     print(eratosthenes(argv[1]))
     return 0
 
+def gen_eratosthenes():
+	"""Generator prime numbers"""
+	'''
+	usage:
+	"""
+	p=gen_eratosthenes()
+	next(p)
+	"""
+	each time run next(p), it produces a new prime number, start from 2, without end.
+	'''
+    p = 1
+    while True:
+        isprime = True
+        p += 1
+        for x in range(2,int(sqrt(p))+1):
+            if p%x == 0:
+                isprime = False
+                break
+        if isprime:
+            yield p
+
+
+
+
 def gen_ints():
     """Generator for positive integers strictly greater than 1."""
     n = 2   #Generator starts at 2, the smallest prime number
