@@ -22,10 +22,9 @@ def gen_eratosthenes():
 	"""
 	each time run next(p), it produces a new prime number, start from 2, without end.
 	'''
-    p = 1
+    p = 2
     while True:
         isprime = True
-        p += 1
         for x in range(2,int(sqrt(p))+1):
             if p%x == 0:
                 isprime = False
@@ -33,6 +32,7 @@ def gen_eratosthenes():
         if isprime:
             yield p
 
+        p += 1
 
 
 
