@@ -9,68 +9,66 @@ numbers strictly less than n.
 """
 
 def main(argv):
-    print(eratosthenes(argv[1]))
-    return 0
+	print(eratosthenes(argv[1]))
+	return 0
 
 def gen_eratosthenes():
 	"""Generator prime numbers"""
 	'''
 	usage:
-	"""
 	p=gen_eratosthenes()
 	next(p)
-	"""
 	each time run next(p), it produces a new prime number, start from 2, without end.
 	'''
-    p = 2
-    while True:
-        isprime = True
-        for x in range(2,int(sqrt(p))+1):
-            if p%x == 0:
-                isprime = False
-                break
-        if isprime:
-            yield p
+	p = 2
+	while True:
+	    isprime = True
+	    for x in range(2,int(sqrt(p))+1):
+	        if p%x == 0:
+	            isprime = False
+	            break
+	    if isprime:
+	        yield p
 
-        p += 1
+	    p += 1
 
 
 
 def gen_ints():
-    """Generator for positive integers strictly greater than 1."""
-    n = 2   #Generator starts at 2, the smallest prime number
-    while True:
-        yield n
-        n += 1
+	"""Generator for positive integers strictly greater than 1."""
+	n = 2   #Generator starts at 2, the smallest prime number
+	while True:
+	    yield n
+	    n += 1
 
 def eratosthenes(number):
-    """Enter a positive integer greater than 2; return the list 
+	"""Enter a positive integer greater than 2; return the list 
 	of prime numbers strictly less than that integer."""
-    try:
-        number = int(number)
-    except TypeError:
-        return 'Argument must not be a list'
-    except ValueError:
-        return 'Argument must be an integer, not "%s"' % number
+	try:
+	    number = int(number)
+	except TypeError:
+	    return 'Argument must not be a list'
+	except ValueError:
+	    return 'Argument must be an integer, not "%s"' % number
 
-    if number < 2:
-        return 'Argument must be an integer greater than 2, not %d' % number
-    else:
-        #generate list of integers 2 through n-1
-        g = gen_ints()
-        primes = [next(g) for _ in range (number-2)]
+	if number < 2:
+	    return 'Argument must be an integer greater than 2, not %d' % number
+	else:
+	    #generate list of integers 2 through n-1
+	    g = gen_ints()
+	    primes = [next(g) for _ in range (number-2)]
   
-        stopPoint = sqrt(number)
-        primePosition = 0
-        testPrime = primes[primePosition]
-        while testPrime < stopPoint:
-            #iterate backwards through list and remove multiples
-            for index in range(len(primes)-1,primePosition,-1):
-                if primes[index]%testPrime == 0:
-                    del primes[index]
-            primePosition += 1
-            testPrime = primes[primePosition]
-        return primes
+	    stopPoint = sqrt(number)
+	    primePosition = 0
+	    testPrime = primes[primePosition]
+	    while testPrime < stopPoint:
+	        #iterate backwards through list and remove multiples
+	        for index in range(len(primes)-1,primePosition,-1):
+	            if primes[index]%testPrime == 0:
+	                del primes[index]
+	        primePosition += 1
+	        testPrime = primes[primePosition]
+	    return primes
 
 def test_primes():
 	"""Check that the primes less than 100 are correct """
@@ -101,16 +99,16 @@ def test_primes_char():
 	assert success, message
 
 if __name__ == "__main__":
-    try:
-        main(argv)
-    except IndexError:
-        #Accurate feedback for n==2 since the IndexError gets caught first
-        if len(argv) < 2: 
-            print('Missing command-line argument.')
-        else:
-            print('No prime number smaller than 2.')
-        exit(1)
+	try:
+	    main(argv)
+	except IndexError:
+	    #Accurate feedback for n==2 since the IndexError gets caught first
+	    if len(argv) < 2: 
+	        print('Missing command-line argument.')
+	    else:
+	        print('No prime number smaller than 2.')
+	    exit(1)
 	# test functions
-    test_primes()
-    test_primes_negNum()
-    test_primes_char()
+	test_primes()
+	test_primes_negNum()
+	test_primes_char()
