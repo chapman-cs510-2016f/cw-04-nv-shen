@@ -20,17 +20,16 @@ def gen_eratosthenes():
 	next(p)
 	each time run next(p), it produces a new prime number, start from 2, without end.
 	'''
-	p = 2
+	p = 1
 	while True:
 	    isprime = True
+	    p += 1
 	    for x in range(2,int(sqrt(p))+1):
 	        if p%x == 0:
 	            isprime = False
 	            break
 	    if isprime:
 	        yield p
-
-	    p += 1
 
 
 
