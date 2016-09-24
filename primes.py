@@ -22,15 +22,14 @@ def gen_eratosthenes():
 	'''
 	p = 1
 	while True:
-	    isprime = True
-	    p += 1
-	    for x in range(2,int(sqrt(p))+1):
-	        if p%x == 0:
-	            isprime = False
-	            break
-	    if isprime:
-	        yield p
-
+		isprime = True
+		p += 1
+		for x in range(2,int(sqrt(p))+1):
+			if p%x == 0:
+				isprime = False
+				break
+		if isprime:
+			yield p
 
 
 def gen_ints():
@@ -56,7 +55,7 @@ def eratosthenes(number):
 	    #generate list of integers 2 through n-1
 	    g = gen_ints()
 	    primes = [next(g) for _ in range (number-2)]
-  
+	
 	    stopPoint = sqrt(number)
 	    primePosition = 0
 	    testPrime = primes[primePosition]
