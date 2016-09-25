@@ -28,7 +28,7 @@ Complete the following exercises, saving your solutions in the indicated files. 
 
 Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
 
-**CHANGEME**
+**Jupyter is a good tool for doing nice documentation, especially since it can also ude markdown and html for formatting. The downside, however, is that it is "yet-another tool for doing something done by a bunch of other very capable tools", specifically Word, google docs, pagemaker, etc. Though it is particularly niceto be able to embed LaTeX commands directly, that way you don't have to work with the (often convoluted) equation editors those tools offer.**
 
 ## Honor Pledge
 
