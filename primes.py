@@ -38,6 +38,13 @@ def gen_ints():
 	while True:
 	    yield n
 	    n += 1
+    #
+    ### INSTRUCTOR COMMENT:
+    # This is reimplementing the function range(n), but making it
+    # an infinite list. However, later on you truncate the list to n.
+    # That is a huge amount of work instead of just calling range(n)
+    # and will be much less efficient.
+    #
 
 def eratosthenes(number):
 	"""Enter a positive integer greater than 2; return the list 
@@ -48,6 +55,12 @@ def eratosthenes(number):
 	    return 'Argument must not be a list'
 	except ValueError:
 	    return 'Argument must be an integer, not "%s"' % number
+    #
+    ### INSTRUCTOR COMMENT:
+    # If all you need is to check whether it is a positive integer > 2,
+    # you can do a single assertion check:
+    #    assert isinstance(number, int) and number > 2
+    #
 
 	if number < 2:
 	    return 'Argument must be an integer greater than 2, not %d' % number
@@ -55,6 +68,10 @@ def eratosthenes(number):
 	    #generate list of integers 2 through n-1
 	    g = gen_ints()
 	    primes = [next(g) for _ in range (number-2)]
+        #
+        ### INSTRUCTOR COMMENT:
+        # See above.
+        #
 	
 	    stopPoint = sqrt(number)
 	    primePosition = 0
